@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 210 60% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 8%;
+
+    --primary: 195 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 190 95% 45%;
+
+    --secondary: 200 80% 92%;
+    --secondary-foreground: 195 85% 25%;
+
+    --muted: 200 30% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 185 85% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 25% 88%;
+    --input: 200 25% 90%;
+    --ring: 195 85% 45%;
+
+    --radius: 0.75rem;
+    
+    --gradient-water: linear-gradient(135deg, hsl(195 85% 35%) 0%, hsl(190 95% 45%) 50%, hsl(185 85% 50%) 100%);
+    --gradient-water-subtle: linear-gradient(180deg, hsl(200 80% 92%) 0%, hsl(210 100% 97%) 100%);
+    --shadow-water: 0 10px 40px -10px hsl(195 85% 35% / 0.3);
+    --shadow-glow: 0 0 30px hsl(190 95% 45% / 0.2);
+    
+    --animation-flow: flow 3s ease-in-out infinite;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 200 30% 95%;
+
+    --card: 210 45% 12%;
+    --card-foreground: 200 30% 95%;
+
+    --popover: 210 45% 10%;
+    --popover-foreground: 200 30% 95%;
+
+    --primary: 190 95% 45%;
+    --primary-foreground: 210 50% 8%;
+    
+    --primary-glow: 185 100% 55%;
+
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 190 95% 45%;
+
+    --muted: 210 35% 20%;
+    --muted-foreground: 200 20% 60%;
+
+    --accent: 185 85% 50%;
+    --accent-foreground: 210 50% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 200 30% 95%;
+
+    --border: 210 35% 22%;
+    --input: 210 35% 22%;
+    --ring: 190 95% 55%;
+    
+    --gradient-water: linear-gradient(135deg, hsl(195 75% 25%) 0%, hsl(190 85% 35%) 50%, hsl(185 75% 40%) 100%);
+    --gradient-water-subtle: linear-gradient(180deg, hsl(210 40% 18%) 0%, hsl(210 50% 8%) 100%);
+    --shadow-water: 0 10px 40px -10px hsl(190 95% 45% / 0.4);
+    --shadow-glow: 0 0 40px hsl(190 95% 45% / 0.3);
+  }
+}
+
+@keyframes flow {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-10px) scale(1.05); opacity: 1; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
